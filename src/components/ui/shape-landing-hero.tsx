@@ -1,11 +1,10 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Circle } from "lucide-react";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import ElegantShape from "./ElegantShape";
 import { elegantShapes } from "@/config/ElegantShapeConfig";
+import { NavBar } from "./Navbar";
 
 function HeroGeometric() {
   const fadeUpVariants = {
@@ -22,7 +21,7 @@ function HeroGeometric() {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
+    <div className="relative min-h-screen w-full flex  justify-center overflow-hidden bg-[#030303]">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
@@ -39,22 +38,30 @@ function HeroGeometric() {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-20 px-4 md:px-6 bg-amber-300">
-        <div className="max-w-3xl mx-auto text-center bg-red-400">
-          <motion.div custom={1} initial="hidden" animate="visible">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                Hello
+      <div className="relative z-10 w-full max-w-5xl mx-auto ">
+        <NavBar />
+        <div className="max-w-3xl mx-auto text-center ">
+          <motion.div
+            className="mt-36 "
+            custom={1}
+            initial="hidden"
+            animate="visible "
+          >
+            <h1 className="text-white text-5xl md:text-6xl xl:text-7xl  tracking-tight font-sans text-balance">
+              <span className="bg-clip-text text-transparent leading-10  bg-gradient-to-b from-white to-white/80">
+                Launch your website within a week
               </span>
-              <br />
+            </h1>
+            <p className="text-sm md:text-lg text-gray-400 font-sans tracking-tight ">
               <span
                 className={cn(
                   "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                 )}
               >
-                hello
+                Cool features, lightning-fast delivery.We build full-stack web
+                that go live fast.
               </span>
-            </h1>
+            </p>
           </motion.div>
 
           <motion.div custom={2} initial="hidden" animate="visible">
