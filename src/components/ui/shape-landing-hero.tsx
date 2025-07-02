@@ -3,9 +3,10 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ElegantShape from "./ElegantShape";
-import { elegantShapes } from "@/config/ElegantShapeConfig";
+import { elegantShapes } from "@/config/HeroSection";
 import { NavBar } from "./Navbar";
-
+import { ArrowRight } from "lucide-react";
+import Demo from "./Marquee";
 function HeroGeometric() {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -40,30 +41,34 @@ function HeroGeometric() {
 
       <div className="relative z-10 w-full max-w-5xl mx-auto ">
         <NavBar />
-        <div className="max-w-3xl mx-auto text-center ">
+        <div className=" mx-auto text-center ">
           <motion.div
             className="mt-36 "
             custom={1}
             initial="hidden"
             animate="visible "
           >
-            <h1 className="text-white text-5xl md:text-6xl xl:text-7xl  tracking-tight font-sans text-balance">
+            <h1 className="text-white text-5xl md:text-6xl xl:text-8xl font-semibold  font-sans text-balance">
               <span className="bg-clip-text text-transparent leading-10  bg-gradient-to-b from-white to-white/80">
                 Launch your website within a week
               </span>
             </h1>
-            <p className="text-sm md:text-lg text-gray-400 font-sans tracking-tight ">
-              <span
-                className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
-                )}
-              >
-                Cool features, lightning-fast delivery.We build full-stack web
-                that go live fast.
-              </span>
-            </p>
-          </motion.div>
 
+            <p
+              className={cn(
+                "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-sm md:text-lg  font-sans tracking-tight my-3"
+              )}
+            >
+              Cool features, lightning-fast delivery. We build full-stack web
+              that go live fast.
+            </p>
+
+            <button className="bg-white mx-auto mt-10 px-4 py-2 rounded-md my-auto flex items-center gap-2 whitespace-nowrap">
+              Let&apos;s Talk
+              <ArrowRight size={16} />
+            </button>
+          </motion.div>
+          <Demo />
           <motion.div custom={2} initial="hidden" animate="visible">
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4"></p>
           </motion.div>

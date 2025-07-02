@@ -1,4 +1,4 @@
-// elegantShapesConfig.ts or define above the component
+import { LucideIcon, Home, User, Briefcase, FileText } from "lucide-react";
 export const elegantShapes = [
   {
     delay: 0.3,
@@ -45,4 +45,26 @@ export const elegantShapes = [
     className:
       "hidden sm:block left-[15%] md:left-[25%] top-[5%] md:top-[10%] scale-75 md:scale-100",
   },
+];
+
+//Navbar
+export const navItems = [
+  { name: "Home", url: "#", icon: Home },
+  { name: "About", url: "#", icon: User },
+  { name: "Projects", url: "#", icon: Briefcase },
+  { name: "Resume", url: "#", icon: FileText },
+];
+
+//Marquee
+export const companies = [
+  "Apple",
+  "Google",
+  "Microsoft",
+  "Amazon",
+  "Meta",
+  "Tesla",
+  "Netflix",
+  "Spotify",
+  "Adobe",
+  "Salesforce",
 ];

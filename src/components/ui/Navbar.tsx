@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { navItems } from "@/config/NavConfig";
+import { navItems } from "@/config/HeroSection";
 import Image from "next/image";
 interface NavBarProps {
   className?: string;
@@ -86,7 +86,7 @@ export function NavBar({ className }: NavBarProps) {
             );
           })}
         </div>
-        <button className="bg-white px-4 py-1.5 rounded-md my-auto flex items-center whitespace-nowrap mr-2">
+        <button className="bg-white px-4 py-1.5 rounded-md my-auto flex items-center whitespace-nowrap mr-2 ">
           Let&apos;s Talk
         </button>
       </div>
