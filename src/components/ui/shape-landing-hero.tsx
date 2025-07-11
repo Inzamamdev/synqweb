@@ -6,7 +6,12 @@ import ElegantShape from "./ElegantShape";
 import { elegantShapes } from "@/config/HeroSection";
 import { NavBar } from "./Navbar";
 import { ArrowRight } from "lucide-react";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+import { TextShimmerWave } from "./text-shimmer-wave";
+import { TextShimmer } from "./text-shimmer";
+import BusinessLandingSection from "./Whyus";
 import Demo from "./Marquee";
+import OurWork from "./OurWork";
 function HeroGeometric() {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -54,14 +59,14 @@ function HeroGeometric() {
               </span>
             </h1>
 
-            <p
+            <TextShimmer
               className={cn(
-                "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-sm md:text-lg  font-sans tracking-tight my-3"
+                " text-sm md:text-lg  font-sans tracking-tight my-3"
               )}
             >
               Cool features, lightning-fast delivery. We build full-stack web
               that go live fast.
-            </p>
+            </TextShimmer>
 
             <button className="bg-white mx-auto mt-10 px-4 py-2 rounded-md my-auto flex items-center gap-2 whitespace-nowrap">
               Let&apos;s Talk
@@ -69,9 +74,8 @@ function HeroGeometric() {
             </button>
           </motion.div>
           <Demo />
-          <motion.div custom={2} initial="hidden" animate="visible">
-            <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4"></p>
-          </motion.div>
+          <BusinessLandingSection />
+          <OurWork />
         </div>
       </div>
 

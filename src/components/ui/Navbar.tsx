@@ -37,7 +37,7 @@ export function NavBar({ className }: NavBarProps) {
           <Image
             height="100"
             width="100"
-            src="/synqwebLogo.png"
+            src="/logo-light-new.png"
             alt="logo"
             className="w-15 h-15 m-0 p-0"
           ></Image>
