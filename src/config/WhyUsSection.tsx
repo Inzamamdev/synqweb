@@ -2,10 +2,22 @@ export const services = [
   {
     title: "Built for Businesses",
     description: [
-      "You’re not launching a startup — you’re running a real business",
-      "You need a website that works, sells, and ranks on Google",
-      "Not just another overdesigned brochure site",
-      "Built for results, not just looks",
+      {
+        id: "desc-1",
+        text: "You’re not launching a startup — you’re running a real business",
+      },
+      {
+        id: "desc-2",
+        text: "You need a website that works, sells, and ranks on Google",
+      },
+      {
+        id: "desc-3",
+        text: "Not just another overdesigned brochure site",
+      },
+      {
+        id: "desc-4",
+        text: "Built for results, not just looks",
+      },
     ],
     icon: (
       <svg
@@ -27,10 +39,22 @@ export const services = [
   {
     title: "Sell While You Sleep",
     description: [
-      "We build websites that work while you sleep",
-      "Turn visitors into real leads and bookings",
-      "Perfect for roofers, realtors, restaurants, and service pros",
-      "Sales machines built to perform",
+      {
+        id: "desc-1",
+        text: "We build websites that work while you sleep",
+      },
+      {
+        id: "desc-2",
+        text: "Turn visitors into real leads and bookings",
+      },
+      {
+        id: "desc-3",
+        text: "Perfect for roofers, realtors, restaurants, and service pros",
+      },
+      {
+        id: "desc-4",
+        text: "Sales machines built to perform",
+      },
     ],
     icon: (
       <svg
@@ -52,10 +76,22 @@ export const services = [
   {
     title: "Why “Synqweb”?",
     description: [
-      "We sync your business goals with smart website strategy",
-      "Everything working together to grow your business",
-      "Not just good design — but High-converting copy",
-      "SEO that ranks",
+      {
+        id: "desc-1",
+        text: "We sync your business goals with smart website strategy",
+      },
+      {
+        id: "desc-2",
+        text: "Everything working together to grow your business",
+      },
+      {
+        id: "desc-3",
+        text: "Not just good design — but High-converting copy",
+      },
+      {
+        id: "desc-4",
+        text: "SEO that ranks",
+      },
     ],
     icon: (
       <svg

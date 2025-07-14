@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import ElegantShape from "./ElegantShape";
 import { elegantShapes } from "@/config/HeroSection";
@@ -12,19 +13,30 @@ import { TextShimmer } from "./text-shimmer";
 import BusinessLandingSection from "./Whyus";
 import Demo from "./Marquee";
 import OurWork from "./OurWork";
+import Pricing from "./Pricing";
+import Footer from "./Footer";
 function HeroGeometric() {
-  const fadeUpVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: [0.25, 0.4, 0.25, 1],
+  const [showFooter, setShowFooter] = useState(false);
+  const lastSectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowFooter(entry.isIntersecting);
       },
-    }),
-  };
+      { threshold: 0.5 } // adjust sensitivity
+    );
+
+    if (lastSectionRef.current) {
+      observer.observe(lastSectionRef.current);
+    }
+
+    return () => {
+      if (lastSectionRef.current) {
+        observer.unobserve(lastSectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full flex  justify-center overflow-hidden bg-[#030303]">
@@ -44,7 +56,7 @@ function HeroGeometric() {
         ))}
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto ">
+      <div className="relative z-10 w-full mx-auto px-2 sm:px-0 sm:max-w-5xl">
         <NavBar />
         <div className=" mx-auto text-center ">
           <motion.div
@@ -76,6 +88,14 @@ function HeroGeometric() {
           <Demo />
           <BusinessLandingSection />
           <OurWork />
+          <Pricing />
+          <div
+            ref={lastSectionRef}
+            data-orientation="horizontal"
+            role="none"
+            className="shrink-0 h-[1px] w-full bg-gray-400 my-5"
+          ></div>
+          <Footer show={showFooter} />
         </div>
       </div>
 

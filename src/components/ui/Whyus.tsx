@@ -58,7 +58,7 @@ const Spotlight = ({
 
 interface ServiceCardProps {
   title: string;
-  description: string[];
+  description: { id: string; text: string }[];
   icon: React.ReactNode;
   spotlightColor: string;
 }
@@ -149,7 +149,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             {title}
           </motion.h3>
 
-          <motion.p
+          <motion.div
             className="text-gray-300 leading-relaxed flex-grow text-left"
             animate={{
               y: isHovered ? -2 : 0,
@@ -161,9 +161,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             }}
           >
             {description.map((item, index) => (
-              <li key={item}>{item}</li>
+              <li key={item.id}>{item.text}</li>
             ))}
-          </motion.p>
+          </motion.div>
         </div>
       </Spotlight>
     </motion.div>
