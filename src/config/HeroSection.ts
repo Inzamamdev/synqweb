@@ -1,4 +1,4 @@
-import { LucideIcon, Home, User, Briefcase, FileText } from "lucide-react";
+import { Home, User, Briefcase } from "lucide-react";
 export const elegantShapes = [
   {
     delay: 0.3,
@@ -49,22 +49,20 @@ export const elegantShapes = [
 
 //Navbar
 export const navItems = [
-  { name: "Home", url: "#", icon: Home },
-  { name: "About", url: "#", icon: User },
-  { name: "Projects", url: "#", icon: Briefcase },
-  { name: "Resume", url: "#", icon: FileText },
+  { name: "Why Us?", action: "business", icon: Home },
+  { name: "Our Work", action: "work", icon: User },
+  { name: "Pricing", action: "pricing", icon: Briefcase },
 ];
 
 //Marquee
 export const companies = [
-  "Apple",
-  "Google",
-  "Microsoft",
-  "Amazon",
+  "Briefox",
+  "TrustVibes",
+  "Convey",
+  "Healthify",
   "Meta",
-  "Tesla",
-  "Netflix",
-  "Spotify",
-  "Adobe",
-  "Salesforce",
+  "Just Chicken",
+  "Foody",
+  "Softsell",
+  "Arise",
 ];

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { PlusIcon, ShieldCheckIcon } from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";

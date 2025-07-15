@@ -2,18 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/config/HeroSection";
 import Image from "next/image";
-interface NavBarProps {
-  className?: string;
-}
 
-export function NavBar({ className }: NavBarProps) {
+type NavBarProps = {
+  scrollToSections: {
+    business: () => void;
+    work: () => void;
+    pricing: () => void;
+  };
+};
+export function NavBar({ scrollToSections }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(navItems[0].name);
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,12 +29,12 @@ export function NavBar({ className }: NavBarProps) {
 
   return (
     <div
-    //   className={cn(
-    //     "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
-    // className
-    //   )}
+    // className={cn(
+    //   "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+    //   className
+    // )}
     >
-      <div className=" mt-5 flex justify-between px-4    bg-white/10 border border-white/20 backdrop-blur-xl  rounded-xl shadow-2xl shadow-black/10">
+      <div className="  mt-5 flex justify-between px-4 z-50 bg-white/10 border border-white/20 backdrop-blur-xl  rounded-xl shadow-2xl shadow-black/10">
         <div className="flex items-center">
           <Image
             height="100"
@@ -49,13 +51,20 @@ export function NavBar({ className }: NavBarProps) {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
 
+            const handleClick = () => {
+              setActiveTab(item.name);
+
+              if (item.name === "Why Us?") scrollToSections.business();
+              if (item.name === "Our Work") scrollToSections.work();
+              if (item.name === "Pricing") scrollToSections.pricing();
+            };
+
             return (
-              <Link
+              <button
                 key={item.name}
-                href={item.url}
-                onClick={() => setActiveTab(item.name)}
+                onClick={handleClick}
                 className={cn(
-                  "relative cursor-pointer  font-semibold  px-4 py-2 rounded-full transition-all duration-300",
+                  "relative cursor-pointer font-semibold px-4 py-2 rounded-full transition-all duration-300",
                   "text-white/80 hover:text-white hover:bg-white/10",
                   isActive && "bg-white/20 text-white shadow-lg"
                 )}
@@ -64,16 +73,14 @@ export function NavBar({ className }: NavBarProps) {
                 <span className="md:hidden">
                   <Icon size={18} strokeWidth={2.5} />
                 </span>
+
+                {/* animated background blob */}
                 {isActive && (
                   <motion.div
                     layoutId="lamp"
                     className="absolute inset-0 w-full bg-gradient-to-r from-white/20 to-white/10 rounded-full -z-10 shadow-inner"
                     initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   >
                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-indigo-500/[0.15] to-rose-400 rounded-t-full">
                       <div className="absolute w-12 h-6 bg-gradient-to-r from-violet-400/30 to-amber-400/30 rounded-full blur-md -top-2 -left-2" />
@@ -82,7 +89,7 @@ export function NavBar({ className }: NavBarProps) {
                     </div>
                   </motion.div>
                 )}
-              </Link>
+              </button>
             );
           })}
         </div>

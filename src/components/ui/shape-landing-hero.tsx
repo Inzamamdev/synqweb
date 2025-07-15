@@ -1,14 +1,12 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import ElegantShape from "./ElegantShape";
 import { elegantShapes } from "@/config/HeroSection";
 import { NavBar } from "./Navbar";
 import { ArrowRight } from "lucide-react";
-import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import { TextShimmerWave } from "./text-shimmer-wave";
 import { TextShimmer } from "./text-shimmer";
 import BusinessLandingSection from "./Whyus";
 import Demo from "./Marquee";
@@ -17,6 +15,9 @@ import Pricing from "./Pricing";
 import Footer from "./Footer";
 function HeroGeometric() {
   const [showFooter, setShowFooter] = useState(false);
+  const businessRef = useRef<HTMLDivElement | null>(null);
+  const ourWorkRef = useRef<HTMLDivElement | null>(null);
+  const pricingRef = useRef<HTMLDivElement | null>(null);
   const lastSectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -57,7 +58,16 @@ function HeroGeometric() {
       </div>
 
       <div className="relative z-10 w-full mx-auto px-2 sm:px-0 sm:max-w-5xl">
-        <NavBar />
+        <NavBar
+          scrollToSections={{
+            business: () =>
+              businessRef.current?.scrollIntoView({ behavior: "smooth" }),
+            work: () =>
+              ourWorkRef.current?.scrollIntoView({ behavior: "smooth" }),
+            pricing: () =>
+              pricingRef.current?.scrollIntoView({ behavior: "smooth" }),
+          }}
+        />
         <div className=" mx-auto text-center ">
           <motion.div
             className="mt-36 "
@@ -86,9 +96,20 @@ function HeroGeometric() {
             </button>
           </motion.div>
           <Demo />
-          <BusinessLandingSection />
-          <OurWork />
-          <Pricing />
+          <div ref={businessRef}>
+            <BusinessLandingSection />
+          </div>
+
+          {/* 👉 OurWork */}
+          <div ref={ourWorkRef}>
+            <OurWork />
+          </div>
+
+          {/* 👉 Pricing */}
+          <div ref={pricingRef}>
+            <Pricing />
+          </div>
+
           <div
             ref={lastSectionRef}
             data-orientation="horizontal"

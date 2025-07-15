@@ -1,5 +1,5 @@
 import React from "react";
-import { Gallery6Demo } from "./demo";
+import { Gallery6 } from "../gallery6";
 function OurWork() {
   return (
     <div className="text-white">
@@ -9,7 +9,7 @@ function OurWork() {
       <p className="text-left text-3xl font-bold leading-relaxed">
         See What We’ve Built
       </p>
-      <Gallery6Demo />
+      <Gallery6 />
     </div>
   );
 }

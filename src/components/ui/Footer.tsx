@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 function Footer({ show }: { show: boolean }) {

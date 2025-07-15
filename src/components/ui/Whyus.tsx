@@ -24,7 +24,7 @@ const Spotlight = ({
     clientX,
     clientY,
   }: React.MouseEvent<HTMLDivElement>) {
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
@@ -160,7 +160,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               ease: "easeOut",
             }}
           >
-            {description.map((item, index) => (
+            {description.map((item) => (
               <li key={item.id}>{item.text}</li>
             ))}
           </motion.div>
@@ -200,7 +200,7 @@ const BusinessLandingSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            We Don't Just Build Websites
+            We Don&apos;t Just Build Websites
           </motion.h1>
 
           <motion.p
