@@ -93,8 +93,8 @@ export function NavBar({ scrollToSections }: NavBarProps) {
             );
           })}
         </div>
-        <button className="bg-white px-4 py-1.5 rounded-md my-auto flex items-center whitespace-nowrap mr-2 ">
-          Let&apos;s Talk
+        <button className="bg-white px-4 py-1.5 rounded-md my-auto flex items-center whitespace-nowrap mr-2 cursor-pointer hover:scale-105 transition-all duration-300">
+          <a href="https://calendly.com/synqwebb/30min">Let&apos;s Talk</a>
         </button>
       </div>
     </div>

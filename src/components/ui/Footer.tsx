@@ -7,8 +7,8 @@ function Footer({ show }: { show: boolean }) {
   return (
     <div className="text-white my-20">
       <p className="text-xl">Your Business Deserves a Better Website</p>
-      <button className="bg-white mx-auto my-5 px-4 py-2 rounded-md  flex items-center gap-2 whitespace-nowrap text-foreground">
-        Let&apos;s Talk
+      <button className="bg-white mx-auto my-5 px-4 py-2 rounded-md  flex items-center gap-2 whitespace-nowrap text-foreground cursor-pointer hover:scale-105 transition-all duration-300">
+        <a href="https://calendly.com/synqwebb/30min">Let&apos;s Talk</a>
         <ArrowRight size={16} />
       </button>
       <p className="text-sm text-muted">

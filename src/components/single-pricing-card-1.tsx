@@ -45,7 +45,9 @@ export function PricingComp() {
                 <div className="mt-10 ">
                   <div className="text-muted-background flex items-end gap-0.5 text-xl"></div>
                   <Button className="w-full" variant="outline" asChild>
-                    <a href="#">Book a 15-minute call</a>
+                    <a href="https://calendly.com/synqwebb/30min">
+                      Book a 30-minute call
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -75,7 +77,9 @@ export function PricingComp() {
                   </div>
 
                   <Button className="w-full" variant="secondary" asChild>
-                    <a href="#">Get Started Now</a>
+                    <a href="https://calendly.com/synqwebb/30min">
+                      Get Started Now
+                    </a>
                   </Button>
                 </div>
                 <div

@@ -90,8 +90,8 @@ function HeroGeometric() {
               that go live fast.
             </TextShimmer>
 
-            <button className="bg-white mx-auto mt-10 px-4 py-2 rounded-md my-auto flex items-center gap-2 whitespace-nowrap">
-              Let&apos;s Talk
+            <button className="bg-white mx-auto mt-10 px-4 py-2 rounded-md my-auto flex items-center gap-2 whitespace-nowrap cursor-pointer hover:scale-105 transition-all duration-300">
+              <a href="https://calendly.com/synqwebb/30min">Let&apos;s Talk</a>
               <ArrowRight size={16} />
             </button>
           </motion.div>
