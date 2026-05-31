@@ -37,12 +37,13 @@ export function NavBar({ scrollToSections }: NavBarProps) {
       <div className="  mt-5 flex justify-between px-4 z-50 bg-white/10 border border-white/20 backdrop-blur-xl  rounded-xl shadow-2xl shadow-black/10">
         <div className="flex items-center">
           <Image
-            height="100"
-            width="100"
-            src="/logo-light-new.png"
-            alt="logo"
-            className="w-15 h-15 m-0 p-0"
-          ></Image>
+            height={48}
+            width={48}
+            src="/logo.png"
+            alt="Synqweb logo"
+            className="w-12 h-12 m-0 p-0"
+            priority
+          />
           <h1 className="text-white text-xl font-bold">Synqweb</h1>
         </div>
 
