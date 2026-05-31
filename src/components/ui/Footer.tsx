@@ -36,7 +36,7 @@ function Footer({ show }: { show: boolean }) {
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M..." />
           </svg>
-          @Synqweb
+          info@synqweb.com
         </a>
       </motion.footer>
     </div>
