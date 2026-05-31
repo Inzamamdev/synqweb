@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { getCurrentYear } from "@/lib/utils";
 function Footer({ show }: { show: boolean }) {
   return (
     <div className="text-white my-20">
