@@ -18,7 +18,7 @@ export function PricingComp() {
               "z--10 pointer-events-none absolute inset-0 size-full",
               "bg-[linear-gradient(to_right,--theme(--color-background/.2)_1px,transparent_1px),linear-gradient(to_bottom,--theme(--color-background/.2)_1px,transparent_1px)]",
               "bg-[size:32px_32px]",
-              "[mask-image:radial-gradient(ellipse_at_center,var(--foreground)_10%,transparent)]"
+              "[mask-image:radial-gradient(ellipse_at_center,var(--foreground)_10%,transparent)]",
             )}
           />
 
@@ -71,7 +71,7 @@ export function PricingComp() {
                   <div className="text-muted-background flex items-end text-xl">
                     <span>$</span>
                     <span className="text-background -mb-0.5 text-4xl font-extrabold tracking-tighter md:text-5xl">
-                      1000
+                      500
                     </span>
                     <span>/project</span>
                   </div>

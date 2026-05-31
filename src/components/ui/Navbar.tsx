@@ -39,7 +39,7 @@ export function NavBar({ scrollToSections }: NavBarProps) {
           <Image
             height="100"
             width="100"
-            src="/logo-light-new.png"
+            src="/synqwebLogo.png"
             alt="logo"
             className="w-15 h-15 m-0 p-0"
           ></Image>
@@ -66,7 +66,7 @@ export function NavBar({ scrollToSections }: NavBarProps) {
                 className={cn(
                   "relative cursor-pointer font-semibold px-4 py-2 rounded-full transition-all duration-300",
                   "text-white/80 hover:text-white hover:bg-white/10",
-                  isActive && "bg-white/20 text-white shadow-lg"
+                  isActive && "bg-white/20 text-white shadow-lg",
                 )}
               >
                 <span className="hidden md:inline">{item.name}</span>

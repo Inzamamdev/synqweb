@@ -4,6 +4,9 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 function Footer({ show }: { show: boolean }) {
+  function getCurrentYear() {
+    return new Date().getFullYear();
+  }
   return (
     <div className="text-white my-20">
       <p className="text-xl">Your Business Deserves a Better Website</p>
@@ -23,7 +26,7 @@ function Footer({ show }: { show: boolean }) {
              before:bg-gradient-to-r before:from-rose-500 before:via-cyan-400 before:to-indigo-500
              before:rounded-t-full before:z-50"
       >
-        <span>© 2025 Synqweb.com. All rights reserved.</span>
+        <span>© {getCurrentYear()} Synqweb.com. All rights reserved.</span>
         <a
           href="#"
           className="flex items-center gap-2 hover:text-blue-400 transition"
